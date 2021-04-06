@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Binary tree</h2>
+<p id="demo"></p>
+<p>I drew the binary tree according to the example: <img src="https://www.mikeperham.com/wp-content/uploads/2014/11/binary-tree.png" alt="" width="500" height="333"</img></p>
+
+<script>
+
+class Item { 
+	name;
+	leafs = [];
+    
+	constructor(name, leafs) {					
+		this.name = name;
+		this.leafs = leafs;
+	}
+    
+    getName() {
+    	return this.name;
+    }
+    
+    getLeafs() {
+    	return this.leafs;
+    }
+}
+const item14 = new Item("14", []);
+const item15 = new Item("15", [item14]);
+const item10 = new Item("10", []);
+const item11 = new Item("11", [item10]);
+const item8 = new Item("8", []);
+const item5 = new Item("5", []);
+const item4 = new Item("4", [item5]);
+const item2 = new Item("2", []);
+const item0 = new Item("0", []);
+const item13 = new Item("13", [item15]);
+const item9 = new Item("9", [item8, item11]);
+const item6 = new Item("6", [item4]);
+const item1 = new Item("1", [item0, item2]);
+const item12 = new Item("12", [item9, item13]);
+const item3 = new Item("3", [item1, item6]);
+const item7 = new Item("7", [item3, item12]);
+
+function print(item, level) {
+	console.log(Array(level).fill(" ").join(""), item.getName());
+    const leafs = item.getLeafs();
+   	if(leafs.length > 0){
+   		 for (var i = 0; i < leafs.length; i++) {
+   			print(leafs[i], level+1);
+            
+		 }
+   }
+	
+}
+//console.log(item7.getLeafs());
+print(item7, 0);
+//document.getElementById("demo").innerHTML = getLeafs ();
+
+//console.log(item7);
+</script>
+
+</body>
+</html>
