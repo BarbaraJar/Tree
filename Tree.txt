@@ -48,10 +48,8 @@ function print(item, level) {
    	if(leafs.length > 0){
    		 for (var i = 0; i < leafs.length; i++) {
    			print(leafs[i], level+1);
-            
 		 }
-   }
-	
+   }	
 }
 //console.log(item7.getLeafs());
 print(item7, 0);
